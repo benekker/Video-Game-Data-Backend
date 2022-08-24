@@ -20,5 +20,12 @@ public class VideoGameService {
         return videoGameRepository.count();
     }
 
+    public List<VideoGame> getAll(){
+        return videoGameRepository.findAll().stream().toList();
+    }
+    public VideoGame getById(Integer id){
+        return (VideoGame) videoGameRepository.findById(id).orElse(null);
+    }
 
 }
+
